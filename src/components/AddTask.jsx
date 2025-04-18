@@ -14,14 +14,21 @@ const AddTask = ({ OnAddTaskSubmit }) => {
       />
       <input
         type="text"
-        placeholder="Digite a descrição da tarefa tarefa"
+        placeholder="Digite a descrição da tarefa"
         className="border  border-slate-400 outline-slate-400  px-4 py-2 rounded-md"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
       <button
-        className="bg-slate-500 text-white px-4 py-2 rounded-md "
-        onClick={() => OnAddTaskSubmit(title, description)}
+        className="bg-slate-500 text-white px-4 py-2 rounded-md font medium"
+        onClick={() => {
+          if(!title.trim() || !description.trim()) {
+            return alert("Preencha todos os campos");
+          }
+           OnAddTaskSubmit(title, description);
+          setTitle("");
+          setDescription("");
+        }}
       >
         Adicionar
       </button>

@@ -59,7 +59,7 @@ const App = () => {
         <h1 className="text-3xl text-slate-100 font-bold text-center">
           Gerenciador de Tarefas
         </h1>
-        <AddTask onTaskClick={OnAddTaskSubmit} />
+        <AddTask OnAddTaskSubmit={OnAddTaskSubmit} />
         <Tasks
           tasks={tasks}
           onTaskClick={onTaskClick}
